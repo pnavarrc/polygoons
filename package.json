@@ -1,0 +1,35 @@
+{
+  "name": "polygoons",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pnavarrc/polygoons.git"
+  },
+  "keywords": [
+    "noops"
+  ],
+  "author": "Pablo Navarro <pnavarrc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/pnavarrc/polygoons/issues"
+  },
+  "homepage": "https://github.com/pnavarrc/polygoons#readme",
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.0.0",
+    "eslint-plugin-react": "^7.13.0",
+    "prettier": "^1.18.2"
+  }
+}
