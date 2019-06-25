@@ -1,0 +1,42 @@
+export default () => (
+  <g id="eyes10" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#FFFFFF"
+      x="22"
+      y="12"
+      width="15"
+      height="15"
+    ></rect>
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#FFFFFF"
+      x="63"
+      y="12"
+      width="15"
+      height="15"
+    ></rect>
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      fill="#333333"
+      x="29.5"
+      y="19.5"
+      width="5"
+      height="5"
+    ></rect>
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      fill="#333333"
+      x="70.5"
+      y="19.5"
+      width="5"
+      height="5"
+    ></rect>
+  </g>
+);

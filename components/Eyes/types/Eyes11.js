@@ -1,0 +1,61 @@
+export default () => (
+  <g id="eyes11" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+    <circle
+      id="Oval"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#333333"
+      cx="27"
+      cy="20"
+      r="13"
+    ></circle>
+    <circle
+      id="Oval"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#333333"
+      cx="72"
+      cy="20"
+      r="13"
+    ></circle>
+    <path
+      d="M40,20 L59,20"
+      id="Line"
+      stroke="#333333"
+      strokeWidth="4"
+      strokeLinecap="square"
+    ></path>
+    <circle
+      id="Oval"
+      stroke="#FFFFFF"
+      strokeWidth="2"
+      fill="#FFFFFF"
+      cx="28.5"
+      cy="10.5"
+      r="1.5"
+    ></circle>
+    <path
+      d="M34,13 C35.020328,14 35.7177337,14.8333333 36.092217,15.5 C36.4667002,16.1666667 36.7692946,17 37,18"
+      id="Line-2"
+      stroke="#FFFFFF"
+      strokeWidth="4"
+      strokeLinecap="round"
+    ></path>
+    <circle
+      id="Oval"
+      stroke="#FFFFFF"
+      strokeWidth="2"
+      fill="#FFFFFF"
+      cx="73.5"
+      cy="10.5"
+      r="1.5"
+    ></circle>
+    <path
+      d="M79,13 C80.020328,14 80.7177337,14.8333333 81.092217,15.5 C81.4667002,16.1666667 81.7692946,17 82,18"
+      id="Line-2"
+      stroke="#FFFFFF"
+      strokeWidth="4"
+      strokeLinecap="round"
+    ></path>
+  </g>
+);

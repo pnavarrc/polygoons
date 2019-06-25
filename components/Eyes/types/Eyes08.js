@@ -1,0 +1,47 @@
+export default () => (
+  <g id="eyes08" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+    <circle
+      id="Oval"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#FFFFFF"
+      cx="27"
+      cy="20"
+      r="13"
+    ></circle>
+    <circle
+      id="Oval"
+      stroke="#333333"
+      strokeWidth="4"
+      fill="#FFFFFF"
+      cx="72"
+      cy="20"
+      r="13"
+    ></circle>
+    <path
+      d="M40,20 L59,20"
+      id="Line"
+      stroke="#333333"
+      strokeWidth="4"
+      strokeLinecap="square"
+    ></path>
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      fill="#333333"
+      x="27.5"
+      y="13.5"
+      width="4"
+      height="6"
+    ></rect>
+    <rect
+      id="Rectangle"
+      stroke="#333333"
+      fill="#333333"
+      x="72.5"
+      y="13.5"
+      width="4"
+      height="6"
+    ></rect>
+  </g>
+);
