@@ -2,12 +2,18 @@ import axios from "axios";
 import { scaleLinear } from "d3-scale";
 import { extent } from "d3-array";
 import Polygoon from "../components/Polygoon";
+import Header from "../components/Header";
 
 // Params
 const [width, height] = [400, 300];
 
 const Home = ({ coords, color }) => {
-  return <Polygoon color={color} coords={coords} width={width} height={height} />;
+  return (
+    <div>
+      <Header />
+      <Polygoon color={color} coords={coords} width={width} height={height} />
+    </div>
+  );
 };
 
 const x = p => p.x;
