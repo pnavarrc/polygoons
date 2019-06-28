@@ -3,6 +3,8 @@ import { scaleLinear } from "d3-scale";
 import { extent } from "d3-array";
 import Polygoon from "../components/Polygoon";
 import Header from "../components/Header";
+import fetchPolygon from "../src/polygon";
+import fetchColor from "../src/color";
 
 // Params
 const [width, height] = [400, 300];
@@ -11,15 +13,15 @@ const Home = ({ coords, color }) => {
   return (
     <div>
       <Header />
-      <Polygoon color={color} coords={coords} width={width} height={height} />
+      <div style={{ padding: 15 }}>
+        <Polygoon color={color} coords={coords} width={width} height={height} />
+      </div>
     </div>
   );
 };
 
 const x = p => p.x;
 const y = p => p.y;
-
-const randInt = (a, b) => a + (b - a) * Math.random();
 
 const transformPoints = (points, xT, yT) =>
   points.map(({ x, y }) => ({ x: xT(x), y: yT(y) }));
@@ -40,29 +42,13 @@ const normalizePolygon = (width, height, coords) => {
 };
 
 Home.getInitialProps = async () => {
-  const minSides = randInt(3, 7);
-  const maxSides = minSides + randInt(1, 10);
-
-  const params = {
-    count: 1,
-    minSides,
-    maxSides,
-    width,
-    height
-  };
-
-  const { data } = await axios.get("https://api.noopschallenge.com/polybot", { params });
-  const [coords] = data.polygons;
+  const coords = await fetchPolygon();
+  const color = await fetchColor();
   const nPoints = normalizePolygon(width, height, coords);
-
-  const { data: dataHex } = await axios.get("https://api.noopschallenge.com/hexbot", {
-    params: { count: 1 }
-  });
-  const [color] = dataHex.colors;
 
   return {
     coords: nPoints,
-    color: color.value
+    color
   };
 };
 

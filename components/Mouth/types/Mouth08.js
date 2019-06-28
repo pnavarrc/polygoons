@@ -1,32 +1,32 @@
 export default () => (
-  <g id="mouth08" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+  <g id="mouth08" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
     <path
       d="M28.5364836,16 L41.4635164,16 C41.8091389,16.7695921 42,17.6140991 42,18.5 C42,22.0898509 38.8659932,25 35,25 C31.1340068,25 28,22.0898509 28,18.5 C28,17.6140991 28.1908611,16.7695921 28.5364836,16 Z"
       id="Combined-Shape"
       stroke="#333333"
-      stroke-width="4"
+      strokeWidth="4"
       fill="#FFFFFF"
     ></path>
     <path
       d="M43.5364836,16 L56.4635164,16 C56.8091389,16.7695921 57,17.6140991 57,18.5 C57,22.0898509 53.8659932,25 50,25 C46.1340068,25 43,22.0898509 43,18.5 C43,17.6140991 43.1908611,16.7695921 43.5364836,16 Z"
       id="Combined-Shape"
       stroke="#333333"
-      stroke-width="4"
+      strokeWidth="4"
       fill="#FFFFFF"
     ></path>
     <path
       d="M58.5364836,16 L71.4635164,16 C71.8091389,16.7695921 72,17.6140991 72,18.5 C72,22.0898509 68.8659932,25 65,25 C61.1340068,25 58,22.0898509 58,18.5 C58,17.6140991 58.1908611,16.7695921 58.5364836,16 Z"
       id="Combined-Shape"
       stroke="#333333"
-      stroke-width="4"
+      strokeWidth="4"
       fill="#FFFFFF"
     ></path>
     <path
       d="M20.5,16 L79.5,16"
       id="Line-2"
       stroke="#333333"
-      stroke-width="4"
-      stroke-linecap="round"
+      strokeWidth="4"
+      strokeLinecap="round"
     ></path>
   </g>
 );
