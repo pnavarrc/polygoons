@@ -18,7 +18,7 @@ function generatePNG() {
   const ctxt = canvas.getContext("2d");
 
   drawInlineSVG(ctxt, rawSVG, function() {
-    window.giulia = canvas.toDataURL();
+    window.giulia = canvas;
     // console.log(canvas.toDataURL());
   });
 }
