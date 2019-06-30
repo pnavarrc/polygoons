@@ -1,3 +1,5 @@
+window.giulia = '';
+
 function drawInlineSVG(ctx, rawSVG, callback) {
   const svgURL = new XMLSerializer().serializeToString(rawSVG);
   const img = new Image();
@@ -16,6 +18,7 @@ function generatePNG() {
   const ctxt = canvas.getContext("2d");
 
   drawInlineSVG(ctxt, rawSVG, function() {
+    window.giulia = canvas.toDataURL();
     // console.log(canvas.toDataURL());
   });
 }
@@ -23,4 +26,24 @@ function generatePNG() {
 const button = document.querySelector('#button');
 button.addEventListener('click', function() {
   generatePNG();
+});
+
+// ========
+function sharePNG(files) {
+  if (navigator.canShare && navigator.canShare( { files } )) {
+    navigator.share({
+      files,
+      title: 'Polygoon',
+      text: 'I just generated this!',
+    })
+    .then(() => console.log('Share was successful.'))
+    .catch((error) => console.log('Sharing failed', error));
+  } else {
+    console.log('Your system doesn\'t support sharing files.');
+  }
+}
+
+const buttonShare = document.querySelector('#button-share');
+buttonShare.addEventListener('click', function() {
+  sharePNG([window.giulia]);
 });
