@@ -18,9 +18,10 @@ const Home = ({ coords, color }) => {
       </div>
 
       <button id="button">generate png</button>
-      <button id="button-share">share png</button>
+      <button id="button-share" className="share-png">share png</button>
       <canvas id="canvas" width={width} height={height} style={{display: 'block'}}></canvas>
       <script src="/static/script.js" />
+      <link rel="stylesheet" href="/static/style.css" />
     </div>
   );
 };
