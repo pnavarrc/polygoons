@@ -1,0 +1,214 @@
+{
+  "contracts": {
+    "CustomERC1155": {
+      "address": "0x270bb24729ee976eFE77f25181bF85eB7E2E6b0f",
+      "constructorCode": "60806040523480156100115760006000fd5b50610017565b61050a806100266000396000f3fe",
+      "bodyBytecodeHash": "dcc3b410910303ba1dac62b6310cb5e50201f1bbf8d722b245681b695af954fd",
+      "localBytecodeHash": "b7de6796711231df9f68279b5561e79405c4493cfab6d1108712557d247cb76b",
+      "deployedBytecodeHash": "b7de6796711231df9f68279b5561e79405c4493cfab6d1108712557d247cb76b",
+      "types": {
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_array:50<t_uint256>": {
+          "id": "t_array:50<t_uint256>",
+          "valueType": "t_uint256",
+          "length": "50",
+          "kind": "array",
+          "label": "uint256[50]"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        }
+      },
+      "storage": [
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initialized",
+          "astId": 3736,
+          "type": "t_bool",
+          "src": "757:24:26"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "initializing",
+          "astId": 3738,
+          "type": "t_bool",
+          "src": "876:25:26"
+        },
+        {
+          "contract": "Initializable",
+          "path": "zos-lib/contracts/Initializable.sol",
+          "label": "______gap",
+          "astId": 3787,
+          "type": "t_array:50<t_uint256>",
+          "src": "1891:29:26"
+        },
+        {
+          "contract": "CustomERC1155",
+          "path": "contracts/CustomERC1155.sol",
+          "label": "token",
+          "astId": 7,
+          "type": "t_address",
+          "src": "190:41:0"
+        },
+        {
+          "contract": "CustomERC1155",
+          "path": "contracts/CustomERC1155.sol",
+          "label": "initialized",
+          "astId": 9,
+          "type": "t_bool",
+          "src": "237:24:0"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    },
+    "ERC1155MixedFungibleMintable": {
+      "address": "0xbf7491368dCaE19388c4D4e74c8CBA649144A5d2",
+      "constructorCode": "60806040523480156100115760006000fd5b50610017565b612c5b806100266000396000f3fe",
+      "bodyBytecodeHash": "d91c0b3f6ae0850f67d2c42f7358ac0e5d9e36b64fd8ec7ca6344a987aead43d",
+      "localBytecodeHash": "38745d73add364625451cd7db4a2032c2e3a4b2f1cca53b9a785dd4f518d0d06",
+      "deployedBytecodeHash": "38745d73add364625451cd7db4a2032c2e3a4b2f1cca53b9a785dd4f518d0d06",
+      "types": {
+        "t_uint256": {
+          "id": "t_uint256",
+          "kind": "elementary",
+          "label": "uint256"
+        },
+        "t_mapping<t_uint256>": {
+          "id": "t_mapping<t_uint256>",
+          "valueType": "t_uint256",
+          "label": "mapping(key => uint256)",
+          "kind": "mapping"
+        },
+        "t_bool": {
+          "id": "t_bool",
+          "kind": "elementary",
+          "label": "bool"
+        },
+        "t_mapping<t_bool>": {
+          "id": "t_mapping<t_bool>",
+          "valueType": "t_bool",
+          "label": "mapping(key => bool)",
+          "kind": "mapping"
+        },
+        "t_address": {
+          "id": "t_address",
+          "kind": "elementary",
+          "label": "address"
+        },
+        "t_mapping<t_address>": {
+          "id": "t_mapping<t_address>",
+          "valueType": "t_address",
+          "label": "mapping(key => address)",
+          "kind": "mapping"
+        }
+      },
+      "storage": [
+        {
+          "contract": "ERC1155",
+          "path": "contracts/erc-1155/contracts/ERC1155.sol",
+          "label": "balances",
+          "astId": 178,
+          "type": "t_mapping<t_uint256>",
+          "src": "370:66:4"
+        },
+        {
+          "contract": "ERC1155",
+          "path": "contracts/erc-1155/contracts/ERC1155.sol",
+          "label": "operatorApproval",
+          "astId": 184,
+          "type": "t_mapping<t_bool>",
+          "src": "482:71:4"
+        },
+        {
+          "contract": "ERC1155MixedFungible",
+          "path": "contracts/erc-1155/contracts/ERC1155MixedFungible.sol",
+          "label": "nfOwners",
+          "astId": 1148,
+          "type": "t_mapping<t_address>",
+          "src": "648:37:7"
+        },
+        {
+          "contract": "ERC1155MixedFungibleMintable",
+          "path": "contracts/erc-1155/contracts/ERC1155MixedFungibleMintable.sol",
+          "label": "nonce",
+          "astId": 1643,
+          "type": "t_uint256",
+          "src": "216:13:8"
+        },
+        {
+          "contract": "ERC1155MixedFungibleMintable",
+          "path": "contracts/erc-1155/contracts/ERC1155MixedFungibleMintable.sol",
+          "label": "creators",
+          "astId": 1647,
+          "type": "t_mapping<t_address>",
+          "src": "235:44:8"
+        },
+        {
+          "contract": "ERC1155MixedFungibleMintable",
+          "path": "contracts/erc-1155/contracts/ERC1155MixedFungibleMintable.sol",
+          "label": "maxIndex",
+          "astId": 1651,
+          "type": "t_mapping<t_uint256>",
+          "src": "285:44:8"
+        }
+      ],
+      "warnings": {
+        "hasConstructor": false,
+        "hasSelfDestruct": false,
+        "hasDelegateCall": false,
+        "hasInitialValuesInDeclarations": false,
+        "uninitializedBaseContracts": []
+      }
+    }
+  },
+  "solidityLibs": {},
+  "proxies": {
+    "polygoons/CustomERC1155": [
+      {
+        "address": "0xCb021a477F28F30015f1Bcbf92E05B7B5fdC43fA",
+        "version": "1.0.0",
+        "implementation": "0x270bb24729ee976eFE77f25181bF85eB7E2E6b0f",
+        "kind": "Upgradeable"
+      }
+    ],
+    "polygoons/ERC1155MixedFungibleMintable": [
+      {
+        "address": "0xA893A87bbA296fb22CaA3deC56cc75b4F7d49cb5",
+        "version": "1.0.0",
+        "implementation": "0xbf7491368dCaE19388c4D4e74c8CBA649144A5d2",
+        "admin": "0x2E076443De4b2A123aa9Dc81440c700192BCBdc2",
+        "kind": "Upgradeable"
+      }
+    ]
+  },
+  "zosversion": "2.2",
+  "version": "1.0.0",
+  "dependencies": {
+    "openzeppelin-eth": {
+      "package": "0xa44bb80b290de8a465d17b14269df53cf0b9bf4f",
+      "version": "2.2.0"
+    }
+  },
+  "proxyAdmin": {
+    "address": "0x2E076443De4b2A123aa9Dc81440c700192BCBdc2"
+  }
+}

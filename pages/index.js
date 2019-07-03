@@ -1,4 +1,6 @@
-import axios from "axios";
+
+import { useEffect } from 'react';
+import { useStoreActions } from 'easy-peasy';
 import { scaleLinear } from "d3-scale";
 import { extent } from "d3-array";
 import Polygoon from "../components/Polygoon";
@@ -39,16 +41,21 @@ button.addEventListener('click', function() {
 `;
 
 const Home = ({ coords, color }) => {
+
+  const connectAccounts = useStoreActions(actions => actions.connectAccounts);
+
+  useEffect(() => {
+    connectAccounts();
+  }, []);
+
   return (
     <div>
       <Header />
       <div style={{ padding: 15 }}>
         <Polygoon color={color} coords={coords} width={width} height={height} />
       </div>
-
-      <button id="button">generate png</button>
-      <canvas id="canvas" width="400" height="300" style={{display: 'block'}}></canvas>
-      <script dangerouslySetInnerHTML={{ __html: `${js}` }}></script>
+      <button>Collect this Goon</button>
+      <canvas id="canvas" width="400" height="300" style={{ display: 'block' }}></canvas>
     </div>
   );
 };
@@ -75,6 +82,7 @@ const normalizePolygon = (width, height, coords) => {
 };
 
 Home.getInitialProps = async () => {
+
   const coords = await fetchPolygon();
   const color = await fetchColor();
   const nPoints = normalizePolygon(width, height, coords);
