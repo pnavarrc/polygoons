@@ -1,8 +1,7 @@
 {
   "zosversion": "2.2",
   "contracts": {
-    "CustomERC1155": "CustomERC1155",
-    "ERC1155MixedFungibleMintable": "ERC1155MixedFungibleMintable"
+    "Polygoons": "Polygoons"
   },
   "dependencies": {
     "openzeppelin-eth": "^2.2.0"

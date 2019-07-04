@@ -16,12 +16,14 @@ export const OrbitContextProvider = ({ children }) => {
     const [orbit, setDBInstance] = useState();
 
     useEffect(() => {
-        ipfs.on('ready', async () => {
-            const orbitdb = await OrbitDB.createInstance(ipfs)
-            const docstore = await orbitdb.docstore('polygoons.meta');
-            setDBInstance(docstore);
-        });
-    }, [orbit])
+        if (!orbit) {
+            ipfs.on('ready', async () => {
+                const orbitdb = await OrbitDB.createInstance(ipfs)
+                const docstore = await orbitdb.docstore('polygoons.meta', { indexBy: 'owner' });
+                setDBInstance(docstore);
+            });
+        }
+    }, [])
 
     return (
         <OrbitContext.Provider value={{ orbit }}>

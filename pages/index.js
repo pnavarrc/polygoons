@@ -1,51 +1,49 @@
 
-import { useEffect } from 'react';
-import { useStoreActions } from 'easy-peasy';
+import { useEffect, useRef } from 'react';
+import { useStoreActions, useStoreState } from 'easy-peasy';
 import { scaleLinear } from "d3-scale";
 import { extent } from "d3-array";
 import Polygoon from "../components/Polygoon";
 import Header from "../components/Header";
+import PurchaseButton from '../components/PurchaseButton'
 import fetchPolygon from "../src/polygon";
 import fetchColor from "../src/color";
+
+// function drawInlineSVG(ctx, rawSVG, callback) {
+//   const svgURL = new XMLSerializer().serializeToString(rawSVG);
+//   const img = new Image();
+
+//   img.onload = function () {
+//     ctx.drawImage(this, 0, 0);
+//     callback();
+//   };
+
+//   img.src = 'data:image/svg+xml; charset=utf8, ' + encodeURIComponent(svgURL);
+// }
+
+// function generatePNG() {
+//   const rawSVG = document.querySelector('#svg');
+//   const canvas = document.querySelector('#canvas');
+//   const ctxt = canvas.getContext("2d");
+
+//   drawInlineSVG(ctxt, rawSVG, function () {
+//     // console.log(canvas.toDataURL());
+//   });
+// }
 
 // Params
 const [width, height] = [400, 300];
 
-const js = `
-function drawInlineSVG(ctx, rawSVG, callback) {
-  const svgURL = new XMLSerializer().serializeToString(rawSVG);
-  const img = new Image();
-
-  img.onload = function () {
-    ctx.drawImage(this, 0, 0);     
-    callback();
-  };
-
-  img.src = 'data:image/svg+xml; charset=utf8, '+encodeURIComponent(svgURL);
-}
-
-function generatePNG() {
-  const rawSVG = document.querySelector('#svg');
-  const canvas = document.querySelector('#canvas');
-  const ctxt = canvas.getContext("2d");
-
-  drawInlineSVG(ctxt, rawSVG, function() {
-    // console.log(canvas.toDataURL());
-  });
-}
-
-const button = document.querySelector('#button');
-button.addEventListener('click', function() {
-  generatePNG();
-});
-`;
-
 const Home = ({ coords, color }) => {
 
-  const connectAccounts = useStoreActions(actions => actions.connectAccounts);
+  let started;
+  const start = useStoreActions(actions => actions.connect);
 
   useEffect(() => {
-    connectAccounts();
+    if (!started)
+      start();
+
+    started = true;
   }, []);
 
   return (
@@ -54,7 +52,7 @@ const Home = ({ coords, color }) => {
       <div style={{ padding: 15 }}>
         <Polygoon color={color} coords={coords} width={width} height={height} />
       </div>
-      <button>Collect this Goon</button>
+      <PurchaseButton goon={{ coords, color }} />
       <canvas id="canvas" width="400" height="300" style={{ display: 'block' }}></canvas>
     </div>
   );
