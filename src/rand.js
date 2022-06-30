@@ -1,3 +1,8 @@
-const randInt = (a, b) => a + (b - a) * Math.random();
+const randInt = (a, b) => Math.round(a + (b - a) * Math.random());
 
-export { randInt };
+const randArray = (n) =>
+  Array(n)
+    .fill(1)
+    .map(() => Math.random());
+
+export { randInt, randArray };

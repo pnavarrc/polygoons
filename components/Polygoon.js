@@ -4,7 +4,7 @@ import Eyes from "./Eyes";
 import Mouth from "./Mouth";
 
 const randInt = (a, b) => Math.floor(a + (b - a) * Math.random());
-const randChoice = items => items[randInt(0, items.length)];
+const randChoice = (items) => items[randInt(0, items.length)];
 const EYE_TYPES = Object.keys(Eyes);
 const MOUTH_TYPES = Object.keys(Mouth);
 
@@ -13,14 +13,14 @@ class Polygoon extends Component {
     super(props);
     this.state = {
       eyeType: null,
-      mouthType: null
+      mouthType: null,
     };
   }
 
   componentDidMount() {
     this.setState({
       eyeType: randChoice(EYE_TYPES),
-      mouthType: randChoice(MOUTH_TYPES)
+      mouthType: randChoice(MOUTH_TYPES),
     });
   }
 
@@ -28,8 +28,8 @@ class Polygoon extends Component {
     const { width, height, coords, color } = this.props;
     const { eyeType, mouthType } = this.state;
 
-    const points = coords.map(p => `${p.x},${p.y}`).join(" ");
-    const polygonCoords = coords.map(p => [p.x, p.y]);
+    const points = coords.map((p) => `${p.x},${p.y}`).join(" ");
+    const polygonCoords = coords.map((p) => [p.x, p.y]);
 
     const [cx, cy] = polygonCentroid(polygonCoords);
 
@@ -39,7 +39,13 @@ class Polygoon extends Component {
     const RandomMouth = Mouth[mouthType];
 
     return (
-      <svg xmlns="http://www.w3.org/2000/svg" width={width} height={height} viewBox={`0 0 ${width} ${height}`} id="svg">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        width={width}
+        height={height}
+        viewBox={`0 0 ${width} ${height}`}
+        id="svg"
+      >
         <g transform="translate(5, 5)scale(0.95)">
           <polygon
             points={points}
