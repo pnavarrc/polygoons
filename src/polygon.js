@@ -1,8 +1,8 @@
 import { randArray, randInt } from "./rand";
 
 const fetchPolygon = async () => {
-  const minSides = randInt(3, 7);
-  const maxSides = minSides + randInt(1, 10);
+  const minSides = randInt(3, 5);
+  const maxSides = minSides + randInt(1, 4);
   const numSides = randInt(minSides, maxSides);
 
   const coords = randArray(numSides)
@@ -11,8 +11,6 @@ const fetchPolygon = async () => {
     .map((t) => ({ x: Math.cos(t), y: Math.sin(t) }));
 
   return [...coords, coords[0]];
-
-  return coords;
 };
 
 export default fetchPolygon;
